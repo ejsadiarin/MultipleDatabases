@@ -12,10 +12,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<CharacterDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("CharacterConnection")));
 builder.Services.AddDbContext<UserDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("UserConnection")));
+builder.Services.AddDbContext<CharacterDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("CharacterConnection")));
 
 var app = builder.Build();
 
